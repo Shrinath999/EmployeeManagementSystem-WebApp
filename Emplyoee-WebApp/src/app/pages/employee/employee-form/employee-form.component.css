@@ -1,0 +1,11 @@
+/* Global styles (styles.css) */
+mat-card {
+  max-height: fit-content;  /* Card height will shrink to fit content */
+  padding: 1.5rem;          /* Reduce padding for compact look */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+mat-form-field {
+  margin-bottom: 0.25rem;   /* Reduce spacing between fields */
+}
+

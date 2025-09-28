@@ -1,0 +1,97 @@
+  <!-- <header> 
+  <mat-toolbar class="!bg-blue-300">
+    <button mat-icon-button class="text-white" aria-label="Menu">
+      <mat-icon (click)="drawer.toggle()" class="text-gray-100">menu</mat-icon>
+    </button>
+    <span class="text-black">Employee Management Systems</span>
+  </mat-toolbar>
+</header>
+
+<mat-drawer-container>
+  <mat-drawer  #drawer 
+    class="w-full sm:w-[200px] md:w-[240px] bg-yellow-300 shadow-lg" 
+    [mode]="'side'" 
+    [opened]="true" >
+ 
+ <div class="flex flex-col items-center gap-4 text-blue-500 p-2">
+ <a routerLink="Dashboard" class="hover:text-blue-700">Dashboard</a>
+  <a routerLink="departments" class="hover:text-blue-700">Department</a>
+  <a routerLink="Employee" class="hover:text-blue-700">Employee</a>
+  </div>
+</mat-drawer>
+
+  
+  <mat-drawer-content>
+    <main class="min-h-screen bg-amber-200
+     p-2">
+    <router-outlet></router-outlet>
+    </main>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+ <footer class="bg-gray-200 p-4 text-center">
+  &copy; 2025 Employee Management System
+</footer> 
+<!-- <header>
+  <mat-toolbar class="bg-blue-500 text-white">
+    <button mat-icon-button (click)="drawer.toggle()" aria-label="Menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="ml-2 font-semibold">Employee Management System</span>
+  </mat-toolbar>
+</header>
+
+<mat-drawer-container class="min-h-screen-">
+  <mat-drawer #drawer class="w-20 bg-white shadow-lg" [mode]="'side'" [opened]="true">
+    <div class="flex flex-col items-start gap-4 p-4 text-blue-500">
+      <a routerLink="/" class="hover:text-blue-700">Dashboard</a>
+      <a routerLink="/departments" class="hover:text-blue-700">Department</a>
+    </div>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <main class="min-h-screen bg-red-100 p-4">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<footer class="bg-gray-200 p-4 text-center">
+  &copy; 2025 Employee Management System
+</footer> --> 
+<header>
+  <mat-toolbar class="!bg-blue-300">
+    <button mat-icon-button class="text-white md:hidden" aria-label="Menu" (click)="drawer.toggle()">
+      <mat-icon class="text-gray-100">menu</mat-icon>
+    </button>
+    <span class="text-black">Employee Management Systems</span>
+  </mat-toolbar>
+</header>
+
+<mat-drawer-container class="h-screen">
+  <mat-drawer 
+    #drawer 
+    class="bg-yellow-300 shadow-lg w-full sm:w-[200px] md:w-[250px] overflow-y-auto"
+    [mode]="isMobile ? 'over' : 'side'" 
+    [opened]="!isMobile">
+    <div class="flex flex-col items-center gap-4 text-blue-500 p-2">
+      <a routerLink="Dashboard" class="hover:text-blue-700">Dashboard</a>
+      <a routerLink="departments" class="hover:text-blue-700">Department</a>
+      <a routerLink="Employee" class="hover:text-blue-700">Employee</a>
+    </div>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <main class="min-h-screen bg-neutral-200 p-2">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<footer class="bg-gradient-to-r from-blue-300 to-indigo-500 text-white py-4 text-center shadow-inner">
+  <p class="text-sm">
+    &copy; 2025 <span class="font-semibold">Employee Management System</span>
+  </p>
+</footer>
+
+

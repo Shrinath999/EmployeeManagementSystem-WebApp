@@ -1,0 +1,21 @@
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 8px;              /* scrollbar ki motai */
+}
+
+/* Scrollbar thumb (jo move hota hai) */
+::-webkit-scrollbar-thumb {
+  background-color: #60a5fa;  /* Blue-400 */
+  border-radius: 4px;         /* Gol konay */
+}
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background-color: #f1f5f9;  /* Gray-100 */
+}
+
+/* Firefox ke liye */
+* {
+  scrollbar-width: thin;       /* Thin scrollbar */
+  scrollbar-color: #60a5fa #f1f5f9; /* Thumb + Track */
+}

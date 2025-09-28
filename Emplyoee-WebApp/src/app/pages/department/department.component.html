@@ -1,0 +1,53 @@
+<div class="container ">
+  <h2 class="heading">Department Management</h2>
+
+  <!-- Add/Edit Form -->
+  <div *ngIf="isFormOpen" class="form-box ">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Department Name</mat-label>
+      <input matInput placeholder="Enter department name" [(ngModel)]="departmentName" />
+    </mat-form-field>
+
+    <div class="btn-group">
+      <button mat-flat-button color="primary" *ngIf="editId === 0" (click)="addDepartment()">
+        Add
+      </button>
+      <button mat-flat-button color="accent" *ngIf="editId !== 0" (click)="updateDepartment()">
+        Update
+      </button>
+      <button mat-button color="warn" (click)="isFormOpen = false">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Add Button -->
+  <div class="add-btn">
+    <button mat-flat-button color="primary" (click)="isFormOpen = true">+ Add Department</button>
+   
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dept of department">
+        <td>{{ dept.id }}</td>
+        <td>{{ dept.name }}</td>
+        <td>
+          <button mat-button color="accent" (click)="editDepartment(dept)">Edit</button>
+          <button mat-button color="warn" (click)="delete(dept.id)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="department.length === 0">
+        <td colspan="3">No Departments Found</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="total">Total Departments: {{ totalCount }}</p>
+</div>
